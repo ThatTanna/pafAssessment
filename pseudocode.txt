@@ -1,0 +1,45 @@
+Fund Transfer Application
+
+Task 1 (6 Marks)
+- Spring Initializr import dependencies
+
+Task 2 (6 Marks)
+- Create project on Railway (Provision MySQL + Redis)
+- Configure in application.properties
+
+Task 3 (18 Marks)
+- data.csv (comma separated)
+- Create schema.sql
+    - CREATE DATABASE IF NOT EXISTS acme_bank;
+    - USE acme_bank;
+    - CREATE TABLE IF NOT EXISTS accounts(
+        account_id VARCHAR(10) NOT NULL,
+        name VARCHAR(128) NOT NULL,
+        balance DECIMAL(6,2) NOT NULL
+        PRIMARY KEY(account_id)
+        );
+    - INSERT INTO accounts (account_id, name, balance) VALUES (V9L3Jd1BBI, fred, 100.00);
+    - "
+
+Task 4 (38 Marks)
+    - Create View 0 (index.html)
+        - From account: <select>
+        - To account: <select>
+        - Amount: 
+        - Comments:
+        - Error message:
+        - Transfer Button: Post
+
+Task 5 (26 Marks)
+    - FundsTransferController
+        - @PostMapping("/transfer")
+    - Validation
+        - both accounts [EXISTS]
+        - lengthOf(account_id)==10
+        - fromAccount != toAccount
+        - Amount >= 10
+        - fromAccount.balance have enough funds
+        - Return to View 0 (index) if validation fails
+
+Task 6 (20 Marks)
+    - 
